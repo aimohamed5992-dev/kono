@@ -1,0 +1,18 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+const API = process.env.VITE_API_TARGET || 'http://localhost:5210'
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  server: {
+    port: 5180,
+    proxy: {
+      '/api': { target: API, changeOrigin: true },
+      '/img': { target: API, changeOrigin: true },
+      '/uploads': { target: API, changeOrigin: true },
+      '/hub': { target: API, changeOrigin: true, ws: true },
+    },
+  },
+})

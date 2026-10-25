@@ -1,0 +1,25 @@
+.DS_Store
+xcuserdata/
+*.xcuserstate
+build/
+DerivedData/
+*.xcscmblueprint
+*.xccheckout
+.swiftpm/
+
+# dependencies / build output
+node_modules/
+dist/
+bin/
+obj/
+.gradle/
+.idea/
+*.apk
+*.aab
+*.zip
+local.properties
+.env
+.env.*
+!.env.example
+backend/deploy/dist/
+backend/src/Kono.Api/wwwroot/uploads/

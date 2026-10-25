@@ -1,0 +1,12 @@
+<resources>
+    <style name="Theme.Kono" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/kono_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- branded system splash: Kono yellow with the brown "k" mark -->
+        <item name="android:windowSplashScreenBackground">@color/kono_yellow</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/kono_yellow</item>
+    </style>
+</resources>

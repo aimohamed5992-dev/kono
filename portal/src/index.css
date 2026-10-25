@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+
+/* ── Kono brand tokens ─────────────────────────────────────────────────── */
+@theme {
+  --color-brand: #fdd003;
+  --color-brand-deep: #f3b90a;
+  --color-cream: #fff7e0;
+  --color-brown: #582808;
+  --color-brown-soft: #7a4a1e;
+  --color-caramel: #c8811e;
+  --color-espresso: #3a1b05;
+  --color-ink: #2e1703;
+  --color-ink-soft: #8a6b4a;
+  --color-canvas: #fbf7ef;
+  --color-line: #efe6d4;
+
+  --color-ok: #2e9e5b;
+  --color-warn: #e0a000;
+  --color-danger: #d1493b;
+  --color-info: #2f7dbe;
+
+  --font-sans: 'Cairo', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --radius-xl: 1rem;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Cairo-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Cairo-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Cairo-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Cairo-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/Cairo-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/Cairo-Black.ttf') format('truetype');
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:root { color-scheme: light; }
+
+/* thin scrollbars */
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-thumb { background: #d9cdb6; border-radius: 999px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+@utility card {
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 2px rgba(88, 40, 8, 0.04), 0 8px 24px -12px rgba(88, 40, 8, 0.08);
+}

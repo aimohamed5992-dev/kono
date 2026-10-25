@@ -1,0 +1,7 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <!-- stylised "k": stem + two arms, inside the adaptive-icon safe zone -->
+    <path android:fillColor="#582808"
+        android:pathData="M37,30 h9 v19 l15,-19 h11.5 l-17,20.5 l18,27.5 h-11 l-13,-20 l-3.5,4 v16 h-9 z" />
+</vector>

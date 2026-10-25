@@ -1,0 +1,35 @@
+[Unit]
+Description=Kono API (ASP.NET Core)
+After=network.target mariadb.service mysql.service
+Wants=mariadb.service
+
+[Service]
+Type=simple
+User=kono
+Group=kono
+WorkingDirectory=/opt/kono-api
+ExecStart=/opt/kono-api/Kono.Api
+Restart=always
+RestartSec=5
+KillSignal=SIGINT
+SyslogIdentifier=kono-api
+TimeoutStopSec=20
+
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=ASPNETCORE_URLS=http://127.0.0.1:5210
+# lets the app trust X-Forwarded-Proto/Host from nginx (correct https image URLs, SignalR)
+Environment=ASPNETCORE_FORWARDEDHEADERS_ENABLED=true
+Environment=DOTNET_gcServer=0
+Environment=DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+# secrets + connection string + public URL live here (chmod 600)
+EnvironmentFile=/etc/kono/kono-api.env
+
+# hardening — the app only needs to write its uploads folder
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/kono
+
+[Install]
+WantedBy=multi-user.target
